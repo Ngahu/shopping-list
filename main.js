@@ -51,6 +51,11 @@ function createAddWindow(){
         slashes:true
     }));
 
+    //garbage collection handle
+    addWindow.on('close',function(){
+        addWindow = null;
+    });
+
 }
 
 
@@ -78,3 +83,28 @@ const  mainMenuTemplate = [
         ]
     }
 ];
+
+// if mac  add empty object to the menu
+if(process.platform == 'darwin'){
+    mainMenuTemplate.unshift({});
+}
+
+
+// add developer tools item if not in production
+if(process.env.NODE_ENV !== 'production'){
+    mainMenuTemplate.push({
+        label:'Developer Tools',
+        submenu:[
+            {
+                label:'Toggle Dev Tools',
+                accelerator:process.platform == 'darwin' ? 'Command+I' : 'Ctrl+I', 
+                click(item,focusedWindow){
+                    focusedWindow.toggleDevTools();
+                }
+            },
+            {
+                role:'Reload'
+            }
+        ]
+    })
+}
