@@ -24,6 +24,11 @@ app.on('ready',function(){
         slashes:true
     }));
 
+    //Quit the app when closed
+    mainWindow.on('closed',function(){
+        app.quit();
+    });
+
     // build the menu from template
     const  mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
     //insert the menu
@@ -35,7 +40,7 @@ app.on('ready',function(){
 function createAddWindow(){
     //create a  new window
    addWindow= new BrowserWindow({
-       width:300,
+       width:500,
        height:200,
        title:'Add Shopping List Item'
    }); 
