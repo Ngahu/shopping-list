@@ -4,7 +4,7 @@ const path = require('path');
 
 
 
-const {app, BrowserWindow } = electron;
+const {app, BrowserWindow,Menu } = electron;
 
 
 let mainWindow;
@@ -22,12 +22,31 @@ app.on('ready',function(){
         slashes:true
     }));
 
+    // build the menu from template
+    const  mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
+    //insert the menu
+    Menu.setApplicationMenu(mainMenu);
+
 });
 
 
 // create a menu template
 const  mainMenuTemplate = [
     {
-        label:'File'
+        label:'File',
+        submenu:[
+            {
+                label:'Add Item'
+            },
+            {
+                label:'Clear Items'
+            },
+              {
+                  label:'Quit',
+                  click(){
+                      app.quit();
+                  }
+              }
+        ]
     }
 ];

@@ -1,3 +1,2 @@
 Project name: Shopping list
-Description:This is a desktop app made created using electron js
- 
+Description:This is a desktop app created using electron js
