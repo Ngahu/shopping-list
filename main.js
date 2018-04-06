@@ -103,8 +103,8 @@ if(process.env.NODE_ENV !== 'production'){
                 }
             },
             {
-                role:'Reload'
+                role:'reload'
             }
         ]
-    })
+    });
 }
