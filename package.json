@@ -1,0 +1,14 @@
+{
+  "name": "shopping_list",
+  "version": "1.0.0",
+  "description": "a shopping list desktop app made using electron",
+  "main": "main.js",
+  "scripts": {
+    "start": " electron ."
+  },
+  "author": "Ngahu Ng'ang'a",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^1.8.4"
+  }
+}
