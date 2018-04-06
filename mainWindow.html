@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shopping list App</title>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+          
 </head>
 <body>
      <h1>Home  List</h1>
@@ -30,6 +37,13 @@
         ipcRenderer.on('item:clear',function(){
             ul.innerHTML = '';
         });
+
+        //remove a siingle item
+        ul.addEventListener('dblclick',removeItem);
+
+        function removeItem(e){
+            e.target.remove();
+        }
 
      </script>
 </body>

@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add Shopping List Item</title>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+          
 </head>
 <body>
     
@@ -27,7 +34,7 @@
             e.preventDefault();
             const item = document.querySelector('#item').value;
             ipcRenderer.send('item:add',item);
-            console.log(item)
+            //console.log(item)
 
         }
     </script>
