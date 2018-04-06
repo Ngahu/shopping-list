@@ -16,5 +16,18 @@ app.on('ready',function(){
     mainWindow = new BrowserWindow({}); 
 
     //load the html file to the window
-    
+    mainWindow.loadURL(url.format({
+        pathname:path.join(__dirname,'mainWindow.html'),
+        protocol:'file',
+        slashes:true
+    }));
+
 });
+
+
+// create a menu template
+const  mainMenuTemplate = [
+    {
+        label:'File'
+    }
+];
