@@ -43,6 +43,7 @@ const  mainMenuTemplate = [
             },
               {
                   label:'Quit',
+                  accelerator:process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',    //this is an if statement check if Os is mac or a windows/linux
                   click(){
                       app.quit();
                   }
