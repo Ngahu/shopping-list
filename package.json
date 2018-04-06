@@ -4,11 +4,17 @@
   "description": "a shopping list desktop app made using electron",
   "main": "main.js",
   "scripts": {
-    "start": " electron ."
+    "start": " electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . Shopping List App --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/ --prune=true --out=release-builds --version-string.CompanyName=nearhomes --version-string.FileDescription=CE --version-string.ProductName=\"Shopping List App\"",    
+    "package-linux": "electron-packager . Shopping List App --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/nearhomes.png --prune=true --out=release-builds"
   },
   "author": "Ngahu Ng'ang'a",
   "license": "MIT",
   "dependencies": {
     "electron": "^1.8.4"
+  },
+  "devDependencies": {
+    "electron-packager": "^12.0.0"
   }
 }
